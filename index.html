@@ -10,21 +10,35 @@
 
   <!-- TELA 1: BIPAGEM -->
   <div id="screen-scan" class="screen active">
-    <h1>Bipagem</h1>
-    <p>Aproxime o crachá</p>
-    <input id="scannerInput" autocomplete="off" autofocus />
+    <h1>Mini YMS</h1>
+    <p>Digite ou bipa o ID do Driver</p>
+
+    <input
+      id="scannerInput"
+      placeholder="Ex: DRV001"
+      autocomplete="off"
+      autofocus
+    />
+
+    <button class="primary" onclick="manualSearch()">Buscar</button>
   </div>
 
   <!-- TELA 2: DRIVER -->
   <div id="screen-driver" class="screen">
     <h2 id="driverName"></h2>
-    <button onclick="registerMovement('ENTRADA')">Entrada</button>
-    <button onclick="registerMovement('SAIDA')">Saída</button>
+
+    <button class="entry" onclick="registerMovement('ENTRADA')">
+      ENTRADA
+    </button>
+
+    <button class="exit" onclick="registerMovement('SAIDA')">
+      SAÍDA
+    </button>
   </div>
 
   <!-- TELA 3: OK -->
   <div id="screen-ok" class="screen">
-    <h1>✔ OK</h1>
+    <h1>✔ Registro realizado</h1>
   </div>
 
   <script src="app.js"></script>
