@@ -1,19 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: Arial, sans-serif;
-  text-align: center;
-  background: #f4f4f4;
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #0f172a;
+  color: #f8fafc;
+  height: 100vh;
 }
 
 .screen {
   display: none;
-  padding: 40px;
+  height: 100vh;
+  padding: 32px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
 
 .screen.active {
-  display: block;
+  display: flex;
+}
+
+h1, h2 {
+  margin-bottom: 20px;
+}
+
+p {
+  opacity: 0.8;
+  margin-bottom: 20px;
 }
 
 input {
-  opacity: 0;
-  position: absolute;
+  width: 100%;
+  max-width: 320px;
+  padding: 15px;
+  font-size: 18px;
+  border-radius: 12px;
+  border: none;
+  margin-bottom: 20px;
+}
+
+button {
+  width: 100%;
+  max-width: 320px;
+  padding: 20px;
+  margin: 10px 0;
+  font-size: 22px;
+  font-weight: bold;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+}
+
+button.primary {
+  background: #2563eb;
+  color: white;
+}
+
+button.entry {
+  background: #22c55e;
+  color: #022c22;
+}
+
+button.exit {
+  background: #f97316;
+  color: #431407;
+}
+
+#screen-ok {
+  background: #16a34a;
+  color: white;
 }
