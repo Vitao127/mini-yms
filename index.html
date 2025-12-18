@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Mini YMS</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- TELA 1: BIPAGEM -->
+  <div id="screen-scan" class="screen active">
+    <h1>Bipagem</h1>
+    <p>Aproxime o crachá</p>
+    <input id="scannerInput" autocomplete="off" autofocus />
+  </div>
+
+  <!-- TELA 2: DRIVER -->
+  <div id="screen-driver" class="screen">
+    <h2 id="driverName"></h2>
+    <button onclick="registerMovement('ENTRADA')">Entrada</button>
+    <button onclick="registerMovement('SAIDA')">Saída</button>
+  </div>
+
+  <!-- TELA 3: OK -->
+  <div id="screen-ok" class="screen">
+    <h1>✔ OK</h1>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

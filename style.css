@@ -1,0 +1,19 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  background: #f4f4f4;
+}
+
+.screen {
+  display: none;
+  padding: 40px;
+}
+
+.screen.active {
+  display: block;
+}
+
+input {
+  opacity: 0;
+  position: absolute;
+}
