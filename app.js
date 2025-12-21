@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/a/macros/shopeemobile-external.com/s/AKfycbzFgEeta2lC4-p5JZLwuztcBj6DhtoB6x3Kvf-9rRsxAUTnOAx7KhUswEHgS2Hl1LRx/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbzWep9V0lSPqnimTV0F5we8s6dU_Drx_ve7KDgxc52ondpJslCiNjhKOfonRCTfnXNmRg/exec";
 
 let currentDriver = null;
 const input = document.getElementById("scannerInput");
@@ -6,30 +6,28 @@ const input = document.getElementById("scannerInput");
 /* Scanner físico (Enter) */
 input.addEventListener("keydown", (e) => {
   if (e.key === "Enter") {
-    const code = input.value.trim();
-    input.value = "";
-    handleScan(code);
+    buscarDriver();
   }
 });
 
-/* Busca manual (botão) */
+/* Busca manual */
 function manualSearch() {
+  buscarDriver();
+}
+
+function buscarDriver() {
   const code = input.value.trim();
   if (!code) {
     alert("Digite o ID do Driver");
     return;
   }
-  input.value = "";
-  handleScan(code);
-}
 
-/* Busca driver na planilha */
-function handleScan(code) {
+  input.value = "";
+
   fetch(`${API_URL}?id=${encodeURIComponent(code)}`)
     .then(res => res.json())
     .then(driver => {
-
-      if (!driver || !driver.id) {
+      if (!driver.found) {
         alert("Driver não encontrado");
         return;
       }
@@ -41,8 +39,9 @@ function handleScan(code) {
 
       showScreen("screen-driver");
     })
-    .catch(() => {
+    .catch(err => {
       alert("Erro ao conectar com a planilha");
+      console.error(err);
     });
 }
 
@@ -61,6 +60,7 @@ function registerMovement(tipo) {
   showScreen("screen-ok");
 
   setTimeout(() => {
+    currentDriver = null;
     showScreen("screen-scan");
     input.focus();
   }, 3000);
@@ -75,4 +75,3 @@ function showScreen(id) {
 }
 
 input.focus();
-
