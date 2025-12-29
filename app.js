@@ -1,4 +1,4 @@
-const API_URL = "https://script.google.com/macros/s/AKfycbzQUAhk06QYlVnkGC47L9wkgAvblkpzeLzbi-z4J5dGZZR4ARYxJiVQrXB_iOw3yFsJrA/exec";
+const API_URL = "https://script.google.com/macros/s/AKfycbx3Kbn2qD8DL7xKlAM_ZcmPXIyLABT49saZHVRNTazla6xucJr1YWaMC41c1rQwOTNbZA/exec";
 
 let currentDriver = null;
 const input = document.getElementById("scannerInput");
@@ -75,6 +75,7 @@ function showScreen(id) {
 }
 
 input.focus();
+
 
 
 
